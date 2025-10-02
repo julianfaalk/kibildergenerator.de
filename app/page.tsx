@@ -177,11 +177,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="container mx-auto px-4 py-12" aria-label="KI-generierte Bildergalerie">
-        <div className="flex gap-4 overflow-x-auto pb-4" role="list">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div key={i} className="relative min-w-[200px] md:min-w-[250px]" role="listitem">
+      {/* Photo Gallery - Infinite Scroll */}
+      <section className="w-full overflow-hidden py-12" aria-label="KI-generierte Bildergalerie">
+        <div className="flex gap-4 animate-scroll-left whitespace-nowrap" role="list">
+          {/* Erste Set von Bildern */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+            <div key={i} className="relative inline-block min-w-[200px] md:min-w-[250px] flex-shrink-0" role="listitem">
+              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gray-200">
+                <div className="flex h-full w-full items-center justify-center text-gray-400" aria-label={`KI-generiertes Bewerbungsfoto Beispiel ${i}`}>
+                  Photo {i}
+                </div>
+              </div>
+              <Badge className="absolute bottom-2 left-2 bg-[#20C997] text-xs">
+                KI generiert
+              </Badge>
+            </div>
+          ))}
+          {/* Duplizierte Bilder für seamless loop */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+            <div key={`dup-${i}`} className="relative inline-block min-w-[200px] md:min-w-[250px] flex-shrink-0" role="listitem">
               <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gray-200">
                 <div className="flex h-full w-full items-center justify-center text-gray-400" aria-label={`KI-generiertes Bewerbungsfoto Beispiel ${i}`}>
                   Photo {i}
