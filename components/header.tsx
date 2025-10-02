@@ -3,11 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,14 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-b-gray-200/40 bg-white/80 backdrop-blur-md">
@@ -58,10 +67,10 @@ export function Header() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">Ki Bilder Generator</span>
+            <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">KI Bilder Generator</span>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <nav className="ml-8 hidden items-center gap-6 md:flex">
             <Link
               href="#bewertungen"
@@ -77,21 +86,93 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="ml-auto flex items-center gap-3">
+          {/* CTA Buttons - Desktop */}
+          <div className="ml-auto hidden items-center gap-3 md:flex">
             <Link href="/login">
               <Button variant="ghost" className="h-11 text-base font-medium transition-colors hover:bg-gray-900 hover:text-white">
                 Anmelden
               </Button>
             </Link>
             <Link href="/login">
-              <Button className="h-11 rounded-lg border border-black bg-[#1E293B] px-6 font-lg font-bold text-white transition-colors duration-200 hover:bg-gray-800">
-                KI Bilder erstellen 
+              <Button className="h-11 rounded-lg bg-[#FF6B35] px-6 font-bold text-white transition-colors duration-200 hover:bg-[#FF5722]">
+                KI Bilder erstellen
               </Button>
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="ml-auto md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menü öffnen"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 top-0 z-[100] h-screen w-screen overflow-hidden bg-white md:hidden">
+          <div className="flex h-full flex-col">
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-4 py-4">
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg p-1.5">
+                  <Image
+                    src="/web/icons-384.svg"
+                    alt="KI Bilder Generator Logo"
+                    width={40}
+                    height={40}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <span className="text-lg font-bold text-gray-900">KI Bilder Generator</span>
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Menü schließen"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Mobile Menu Content */}
+            <div className="flex flex-1 flex-col justify-between bg-white p-6">
+              <nav className="flex flex-col gap-6">
+                <Link
+                  href="#bewertungen"
+                  className="text-lg font-medium text-gray-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Bewertungen
+                </Link>
+                <Link
+                  href="#preise"
+                  className="text-lg font-medium text-gray-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Preise
+                </Link>
+                <div className="my-4 border-t border-gray-200" />
+                <Link
+                  href="/login"
+                  className="text-lg font-medium text-gray-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Anmelden
+                </Link>
+              </nav>
+
+              <Link href="/login" className="mt-6">
+                <Button className="w-full h-14 rounded-lg bg-[#FF6B35] text-lg font-bold text-white transition-colors hover:bg-[#FF5722]">
+                  KI Bilder erstellen →
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 } 

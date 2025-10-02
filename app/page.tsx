@@ -122,7 +122,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section className="container mx-auto px-4 py-16 md:py-12">
         <div className="mx-auto max-w-4xl text-center">
           <div className="flex justify-center">
             <span className="mb-6 flex items-center gap-1 text-xs xs:text-sm sm:text-lg text-emerald-800 bg-emerald-100 px-4 py-2 rounded-lg font-semibold">
@@ -132,17 +132,16 @@ export default function Home() {
           </div>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            KI Bilder erstellen & Bewerbungsfotos mit{" "}<br />
+            KI Bilder erstellen mit <br/>{" "}
             <span className="bg-[#20C997] px-2 text-white">eigenem Foto</span>{" "}
             <br />Professionell & Einzigartig
           </h1>
 
           <p className="mb-8 text-lg text-gray-600 md:text-xl">
-            Erstellen Sie professionelle <strong>Bewerbungsfotos</strong> und einzigartige <strong>KI-Bilder</strong> mit Ihren eigenen Fotos in wenigen Minuten.
-            Professionelle Qualität mit künstlicher Intelligenz. Made in Germany.
+            Erstellen Sie einzigartige KI-Bilder mit Ihren eigenen Fotos in wenigen Minuten. Professionelle Qualität mit künstlicher Intelligenz. Entwickelt in Deutschland.
           </p>
 
-          <Button size="lg" className="mb-8 bg-orange-500 text-lg font-semibold hover:bg-orange-600">
+          <Button size="lg" className="mb-8 bg-[#FF6B35] text-lg font-semibold hover:bg-[#FF5722]">
             Jetzt KI Bilder erstellen <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
