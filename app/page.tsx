@@ -8,8 +8,117 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight, Check, Star, Shield, Lock, DollarSign, Sparkles } from "lucide-react";
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kibildergenerator.de/#organization",
+        "name": "KI Bilder Generator",
+        "url": "https://kibildergenerator.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kibildergenerator.de/web/icon-96.png",
+          "width": 96,
+          "height": 96
+        },
+        "description": "Professionelle Bewerbungsfotos und KI-Bilder mit künstlicher Intelligenz erstellen",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "DE"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kibildergenerator.de/#website",
+        "url": "https://kibildergenerator.de",
+        "name": "KI Bilder Generator",
+        "description": "Professionelle Bewerbungsfotos und KI-Bilder erstellen",
+        "publisher": {
+          "@id": "https://kibildergenerator.de/#organization"
+        },
+        "inLanguage": "de-DE"
+      },
+      {
+        "@type": "Service",
+        "name": "KI Bilder Generator - Bewerbungsfotos",
+        "description": "Erstellen Sie professionelle Bewerbungsfotos und einzigartige KI-Bilder mit Ihren eigenen Fotos in wenigen Minuten.",
+        "provider": {
+          "@id": "https://kibildergenerator.de/#organization"
+        },
+        "areaServed": "DE",
+        "serviceType": "KI Bildgenerierung",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Basic Paket",
+            "price": "29",
+            "priceCurrency": "EUR",
+            "description": "40 einzigartige KI-Bilder mit 4 verschiedenen Stilen",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Professional Paket",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "description": "100 einzigartige KI-Bilder mit 10 verschiedenen Stilen",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Premium Paket",
+            "price": "59",
+            "priceCurrency": "EUR",
+            "description": "200 einzigartige KI-Bilder mit 20 verschiedenen Stilen",
+            "availability": "https://schema.org/InStock"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "8500",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist KI Bilder Generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KI Bilder Generator ist ein Online-Tool, das aus deinen eigenen Fotos einzigartige KI-Bilder erstellt – mit verschiedenen Stilen, Hintergründen und kreativen Effekten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schnell bekomme ich meine Bilder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In der Regel innerhalb 10-30 Minuten. Die genaue Zeit hängt von der Serverauslastung ab."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet KI Bilder Generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Du wählst aus klaren Paketen – vom günstigen Einstieg ab 29€ bis zum umfangreichen Set. Du zahlst einmalig und erhältst alle generierten KI-Bilder deines Pakets."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Header />
 
       {/* Hero Section */}
@@ -23,14 +132,14 @@ export default function Home() {
           </div>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            KI Bilder erstellen mit{" "}<br />
-            <span className="bg-[#20C997] px-2 text-white">eigenem Bild</span>{" "}
+            KI Bilder erstellen & Bewerbungsfotos mit{" "}<br />
+            <span className="bg-[#20C997] px-2 text-white">eigenem Foto</span>{" "}
             <br />Professionell & Einzigartig
           </h1>
 
           <p className="mb-8 text-lg text-gray-600 md:text-xl">
-            Erstellen Sie einzigartige KI-Bilder mit Ihren eigenen Fotos in wenigen Minuten.
-            Professionelle Qualität mit künstlicher Intelligenz. Entwickelt in Deutschland.
+            Erstellen Sie professionelle <strong>Bewerbungsfotos</strong> und einzigartige <strong>KI-Bilder</strong> mit Ihren eigenen Fotos in wenigen Minuten.
+            Professionelle Qualität mit künstlicher Intelligenz. Made in Germany.
           </p>
 
           <Button size="lg" className="mb-8 bg-orange-500 text-lg font-semibold hover:bg-orange-600">
@@ -70,12 +179,12 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="flex gap-4 overflow-x-auto pb-4">
+      <section className="container mx-auto px-4 py-12" aria-label="KI-generierte Bildergalerie">
+        <div className="flex gap-4 overflow-x-auto pb-4" role="list">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div key={i} className="relative min-w-[200px] md:min-w-[250px]">
+            <div key={i} className="relative min-w-[200px] md:min-w-[250px]" role="listitem">
               <div className="aspect-[3/4] overflow-hidden rounded-lg bg-gray-200">
-                <div className="flex h-full w-full items-center justify-center text-gray-400">
+                <div className="flex h-full w-full items-center justify-center text-gray-400" aria-label={`KI-generiertes Bewerbungsfoto Beispiel ${i}`}>
                   Photo {i}
                 </div>
               </div>
@@ -88,13 +197,13 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="container mx-auto px-4 py-16 text-center">
+      <section className="container mx-auto px-4 py-16 text-center" aria-labelledby="stats-heading">
         <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#20C997]">
           BEWERTUNGEN & BEISPIELE
         </p>
-        <h2 className="text-4xl font-bold md:text-5xl">
-          <span className="text-[#20C997]">595.000+</span> KI Bilder{" "}
-          <span className="block">erstellt</span>
+        <h2 id="stats-heading" className="text-4xl font-bold md:text-5xl">
+          <span className="text-[#20C997]">595.000+</span> KI Bilder & Bewerbungsfotos{" "}
+          <span className="block">erfolgreich erstellt</span>
         </h2>
       </section>
 

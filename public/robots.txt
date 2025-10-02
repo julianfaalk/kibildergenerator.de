@@ -1,0 +1,19 @@
+# robots.txt für kibildergenerator.de
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kibildergenerator.de/sitemap.xml
+
+# Disallow admin und API endpoints
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /login
+
+# Allow wichtige Seiten
+Allow: /web/icon-*.png
+
+# Crawl-Delay
+Crawl-delay: 1
