@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,13 +15,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <Badge className="mb-6 bg-emerald-50 text-emerald-700 hover:bg-emerald-100">
+          <Badge className="mb-6 bg-[#20C997]/10 text-[#20C997] hover:bg-[#20C997]/20">
             ⭐ DER #1 KI BILDER GENERATOR
           </Badge>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
             KI Bilder erstellen mit{" "}<br />
-            <span className="bg-emerald-500 px-2 text-white">eigenem Bild</span>{" "}
+            <span className="bg-[#20C997] px-2 text-white">eigenem Bild</span>{" "}
             <br />Professionell & Einzigartig
           </h1>
 
@@ -43,7 +44,7 @@ export default function Home() {
             </div>
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="h-4 w-4 fill-green-500 text-green-500" />
+                <Star key={i} className="h-4 w-4 fill-[#20C997] text-[#20C997]" />
               ))}
             </div>
             <span className="text-sm font-medium text-gray-600">
@@ -75,7 +76,7 @@ export default function Home() {
                   Photo {i}
                 </div>
               </div>
-              <Badge className="absolute bottom-2 left-2 bg-emerald-500 text-xs">
+              <Badge className="absolute bottom-2 left-2 bg-[#20C997] text-xs">
                 KI generiert
               </Badge>
             </div>
@@ -85,11 +86,11 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="container mx-auto px-4 py-16 text-center">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-emerald-600">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#20C997]">
           BEWERTUNGEN & BEISPIELE
         </p>
         <h2 className="text-4xl font-bold md:text-5xl">
-          <span className="text-emerald-500">595.000+</span> KI Bilder{" "}
+          <span className="text-[#20C997]">595.000+</span> KI Bilder{" "}
           <span className="block">erstellt</span>
         </h2>
       </section>
@@ -113,7 +114,7 @@ export default function Home() {
                 </div>
               </div>
               <CardContent className="p-4">
-                <Badge className="mb-2 bg-emerald-500 text-xs">KI generiert</Badge>
+                <Badge className="mb-2 bg-[#20C997] text-xs">KI generiert</Badge>
                 <p className="mb-2 italic text-gray-700">&quot;{testimonial.quote}&quot;</p>
                 <div className="mb-1 flex items-center gap-1">
                   <Avatar className="h-6 w-6">
@@ -123,7 +124,7 @@ export default function Home() {
                 </div>
                 <div className="mb-2 flex gap-1">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="h-3 w-3 fill-green-500 text-green-500" />
+                    <Star key={j} className="h-3 w-3 fill-[#20C997] text-[#20C997]" />
                   ))}
                 </div>
                 <p className="text-xs text-gray-500">{testimonial.role}</p>
@@ -146,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Comparison Section - Mint Background */}
-      <section className="bg-emerald-50 py-16">
+      <section className="bg-[#20C997]/10 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             <div>
@@ -159,7 +160,7 @@ export default function Home() {
                   "Bearbeitungscredits",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-emerald-600" />
+                    <Check className="h-5 w-5 text-[#20C997]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -179,7 +180,7 @@ export default function Home() {
                 "Unbegrenzte kreative Möglichkeiten",
               ].map((item, i) => (
                 <li key={i} className="flex items-center justify-center gap-3">
-                  <Check className="h-5 w-5 text-emerald-600" />
+                  <Check className="h-5 w-5 text-[#20C997]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -197,7 +198,7 @@ export default function Home() {
         {/* Step 1 */}
         <div className="mb-16">
           <div className="mb-8 flex justify-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 text-xl font-bold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#20C997] text-xl font-bold text-white">
               1
             </div>
           </div>
@@ -215,7 +216,7 @@ export default function Home() {
         {/* Step 2 */}
         <div className="mb-16">
           <div className="mb-8 flex justify-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 text-xl font-bold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#20C997] text-xl font-bold text-white">
               2
             </div>
           </div>
@@ -233,7 +234,7 @@ export default function Home() {
         {/* Step 3 */}
         <div>
           <div className="mb-8 flex justify-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 text-xl font-bold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#20C997] text-xl font-bold text-white">
               3
             </div>
           </div>
@@ -245,7 +246,7 @@ export default function Home() {
             {[...Array(8)].map((_, i) => (
               <div key={i} className="min-w-[150px]">
                 <div className="aspect-[3/4] rounded-lg bg-gray-200"></div>
-                <Badge className="mt-2 bg-emerald-500 text-xs">KI generiert</Badge>
+                <Badge className="mt-2 bg-[#20C997] text-xs">KI generiert</Badge>
               </div>
             ))}
           </div>
@@ -255,7 +256,7 @@ export default function Home() {
       {/* Additional Tools Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12">
-          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-wide text-emerald-600">
+          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-wide text-[#20C997]">
             WEITERE TOOLS
           </p>
           <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
@@ -286,8 +287,8 @@ export default function Home() {
             },
           ].map((tool, i) => (
             <Card key={i} className="p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50">
-                <div className="h-6 w-6 rounded bg-emerald-200"></div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#20C997]/10">
+                <div className="h-6 w-6 rounded bg-[#20C997]/40"></div>
               </div>
               <h3 className="mb-2 font-bold">{tool.title}</h3>
               <p className="text-sm text-gray-600">{tool.description}</p>
@@ -309,7 +310,7 @@ export default function Home() {
           </div>
           <div className="flex gap-1">
             {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} className="h-5 w-5 fill-emerald-500 text-emerald-500" />
+              <Star key={i} className="h-5 w-5 fill-[#20C997] text-[#20C997]" />
             ))}
           </div>
         </div>
@@ -329,7 +330,7 @@ export default function Home() {
               </div>
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-emerald-500 text-emerald-500" />
+                  <Star key={i} className="h-4 w-4 fill-[#20C997] text-[#20C997]" />
                 ))}
               </div>
               <span className="text-sm font-medium">
@@ -363,7 +364,7 @@ export default function Home() {
                   "5 Bearbeitungscredits",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-emerald-600" />
+                    <Check className="h-4 w-4 text-[#20C997]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -374,8 +375,8 @@ export default function Home() {
             </Card>
 
             {/* Professional */}
-            <Card className="relative overflow-hidden border-2 border-emerald-500 p-6">
-              <Badge className="absolute right-4 top-4 bg-emerald-500">BELIEBT</Badge>
+            <Card className="relative overflow-hidden border-2 border-[#20C997] p-6">
+              <Badge className="absolute right-4 top-4 bg-[#20C997]">BELIEBT</Badge>
               <div className="mb-6">
                 <h3 className="text-xl font-bold">Professional</h3>
                 <div className="mt-4 flex items-baseline">
@@ -394,7 +395,7 @@ export default function Home() {
                   "10 Bearbeitungscredits",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-emerald-600" />
+                    <Check className="h-4 w-4 text-[#20C997]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -425,7 +426,7 @@ export default function Home() {
                   "20 Bearbeitungscredits",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-emerald-600" />
+                    <Check className="h-4 w-4 text-[#20C997]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -483,8 +484,8 @@ export default function Home() {
           ].map((item, i) => (
             <Card key={i} className="p-6 text-center">
               <div className="mb-4 flex justify-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
-                  <item.icon className="h-6 w-6 text-emerald-600" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#20C997]/10">
+                  <item.icon className="h-6 w-6 text-[#20C997]" />
                 </div>
               </div>
               <h3 className="mb-2 font-bold">{item.title}</h3>
@@ -504,7 +505,7 @@ export default function Home() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-emerald-600 md:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold text-[#20C997] md:text-4xl">
               Häufig gestellte Fragen
             </h2>
             <p className="text-gray-600">
@@ -576,18 +577,14 @@ export default function Home() {
       <footer className="bg-gray-900 text-white">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-8 flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="h-5 w-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                  fill="currentColor"
-                />
-              </svg>
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg p-1.5">
+              <Image
+                src="/web/icon-96.png"
+                alt="KI Bilder Generator Logo"
+                width={96}
+                height={96}
+                className="h-full w-full object-contain"
+              />
             </div>
             <span className="text-xl font-bold">KI Bilder Generator</span>
           </div>
@@ -650,7 +647,7 @@ export default function Home() {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           size="lg"
-          className="h-14 w-14 rounded-full bg-emerald-500 p-0 shadow-lg hover:bg-emerald-600"
+          className="h-14 w-14 rounded-full bg-[#20C997] p-0 shadow-lg hover:bg-[#20C997]/90"
         >
           <svg className="h-7 w-7" fill="white" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />

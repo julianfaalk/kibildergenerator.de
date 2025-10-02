@@ -70,8 +70,8 @@
   --chart-5: 27 87% 67%;
 
   /* Custom Design Tokens */
-  --mint-green: 142.1 76.2% 36.3%;
-  --mint-light: 141.7 84.2% 93.1%;
+  --mint-green: 162.7 70.6% 45.7%; /* #20C997 */
+  --mint-light: 162.7 70.6% 95%;
   --orange: 24.6 95% 53.1%;
   --navy: 222.2 47.4% 11.2%;
 }

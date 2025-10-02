@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -36,7 +37,7 @@ export function Header() {
               <span className="font-medium">8500+ zufriedene Kunden</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-emerald-600" />
+              <Check className="h-4 w-4 text-[#20C997]" />
               <span className="font-medium">595,000+ Bewertungsfotos erstellt</span>
             </div>
           </div>
@@ -48,18 +49,14 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500 md:h-12 md:w-12">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="h-6 w-6 text-white md:h-7 md:w-7"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                  fill="currentColor"
-                />
-              </svg>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg p-1.5 md:h-15 md:w-15 md:p-2">
+              <Image
+                src="/web/icon-180.png"
+                alt="KI Bilder Generator Logo"
+                width={96}
+                height={96}
+                className="h-full w-full object-contain"
+              />
             </div>
             <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">KI Bilder Generator</span>
           </Link>
@@ -88,7 +85,7 @@ export function Header() {
               </Button>
             </Link>
             <Link href="/login">
-              <Button className="h-11 rounded-lg border border-black bg-black px-6 font-medium text-white transition-colors duration-200 hover:bg-white hover:text-black">
+              <Button className="h-11 rounded-lg border border-black bg-black px-6 font-medium text-white transition-colors duration-200 hover:bg-gray-800">
                 KI Bilder erstellen
               </Button>
             </Link>
@@ -97,4 +94,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+} 
