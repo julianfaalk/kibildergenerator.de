@@ -5,10 +5,10 @@ import { Check, Star } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="w-full border-b bg-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       {/* Top badges bar */}
-      <div className="border-b bg-gray-50">
-        <div className="container mx-auto px-4 py-2">
+      <div className="border-b bg-gray-50/90">
+        <div className="container mx-auto px-4 sm:px-8 py-2.5">
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:justify-between">
             <div className="flex items-center gap-2">
               <span className="text-gray-600">🇩🇪</span>
@@ -31,15 +31,15 @@ export function Header() {
       </div>
 
       {/* Main navigation */}
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-8">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500 md:h-12 md:w-12">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="h-5 w-5 text-white"
+                className="h-6 w-6 text-white md:h-7 md:w-7"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -48,34 +48,34 @@ export function Header() {
                 />
               </svg>
             </div>
-            <span className="text-xl font-bold text-gray-900">KI Bilder Generator</span>
+            <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">KI Bilder Generator</span>
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="ml-8 hidden items-center gap-6 md:flex">
             <Link
               href="#bewertungen"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900"
+              className="text-base font-medium text-gray-800/80 transition-colors hover:text-gray-900"
             >
               Bewertungen
             </Link>
             <Link
               href="#preise"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900"
+              className="text-base font-medium text-gray-800/80 transition-colors hover:text-gray-900"
             >
               Preise
             </Link>
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-3">
             <Link href="/login">
-              <Button variant="ghost" className="text-sm font-medium">
+              <Button variant="ghost" className="h-11 text-base font-medium transition-colors hover:bg-gray-900 hover:text-white">
                 Anmelden
               </Button>
             </Link>
             <Link href="/login">
-              <Button className="bg-gray-900 text-sm font-semibold hover:bg-gray-800">
+              <Button className="h-11 rounded-lg border border-black bg-black px-6 font-medium text-white transition-colors duration-200 hover:bg-white hover:text-black">
                 KI Bilder erstellen
               </Button>
             </Link>
