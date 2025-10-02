@@ -49,16 +49,16 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg p-1.5 md:h-15 md:w-15 md:p-2">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg p-1.5 md:h-16 md:w-16 md:p-2">
               <Image
-                src="/web/icon-180.png"
+                src="/web/icons-384.svg"
                 alt="KI Bilder Generator Logo"
-                width={96}
-                height={96}
+                width={60}
+                height={60}
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">KI Bilder Generator</span>
+            <span className="text-lg font-bold text-gray-900 sm:text-xl md:text-2xl">Ki Bilder Generator</span>
           </Link>
 
           {/* Navigation Links */}
@@ -85,8 +85,8 @@ export function Header() {
               </Button>
             </Link>
             <Link href="/login">
-              <Button className="h-11 rounded-lg border border-black bg-black px-6 font-medium text-white transition-colors duration-200 hover:bg-gray-800">
-                KI Bilder erstellen
+              <Button className="h-11 rounded-lg border border-black bg-[#1E293B] px-6 font-lg font-bold text-white transition-colors duration-200 hover:bg-gray-800">
+                KI Bilder erstellen 
               </Button>
             </Link>
           </div>

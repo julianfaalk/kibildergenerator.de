@@ -4,8 +4,8 @@ import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight, Check, Star, Shield, Lock, DollarSign, HandshakeIcon } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowRight, Check, Star, Shield, Lock, DollarSign, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,9 +15,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <Badge className="mb-6 bg-[#20C997]/10 text-[#20C997] hover:bg-[#20C997]/20">
-            ⭐ DER #1 KI BILDER GENERATOR
-          </Badge>
+          <div className="flex justify-center">
+            <span className="mb-6 flex items-center gap-1 text-xs xs:text-sm sm:text-lg text-emerald-800 bg-emerald-100 px-4 py-2 rounded-lg font-semibold">
+              <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7826 5.66332L9.07101 4.53199C8.3405 4.22721 7.76005 3.64607 7.45612 2.9152L6.32612 0.197798C6.216 -0.0659327 5.784 -0.0659327 5.67388 0.197798L4.54388 2.9152C4.23995 3.64607 3.6595 4.22721 2.92899 4.532L0.217412 5.66332C0.0854118 5.71847 0 5.84715 0 5.98998C0 6.1328 0.0854118 6.26149 0.217412 6.31664L2.92899 7.44796C3.6595 7.75274 4.23995 8.33388 4.54388 9.06475L5.67388 11.7822C5.72894 11.9144 5.85741 11.9999 6 11.9999C6.14259 11.9999 6.27106 11.9144 6.32612 11.7822L7.45612 9.06475C7.76005 8.33388 8.3405 7.75274 9.07101 7.44796L11.7826 6.31664C11.9146 6.26149 12 6.1328 12 5.98998C12 5.84715 11.9146 5.71847 11.7826 5.66332Z" fill="#10B981"></path></svg>
+              <span className="hidden md:inline">DER </span>#1 KI BILDER  SERVICE
+            </span>
+          </div>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
             KI Bilder erstellen mit{" "}<br />

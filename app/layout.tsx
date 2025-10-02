@@ -19,19 +19,16 @@ export const metadata: Metadata = {
     icon: [
       { url: '/web/icon-16.png', sizes: '16x16', type: 'image/png' },
       { url: '/web/icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/web/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/web/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/web/icon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/web/icon-96.png', sizes: '96x96', type: 'image/png' },
     ],
     apple: [
       { url: '/web/icon-57.png', sizes: '57x57', type: 'image/png' },
       { url: '/web/icon-60.png', sizes: '60x60', type: 'image/png' },
+      { url: '/web/icon-70.png', sizes: '70x70', type: 'image/png' },
       { url: '/web/icon-72.png', sizes: '72x72', type: 'image/png' },
       { url: '/web/icon-76.png', sizes: '76x76', type: 'image/png' },
-      { url: '/web/icon-114.png', sizes: '114x114', type: 'image/png' },
-      { url: '/web/icon-120.png', sizes: '120x120', type: 'image/png' },
-      { url: '/web/icon-144.png', sizes: '144x144', type: 'image/png' },
-      { url: '/web/icon-152.png', sizes: '152x152', type: 'image/png' },
-      { url: '/web/icon-180.png', sizes: '180x180', type: 'image/png' },
+      { url: '/web/icon-96.png', sizes: '96x96', type: 'image/png' },
     ],
   },
 };
