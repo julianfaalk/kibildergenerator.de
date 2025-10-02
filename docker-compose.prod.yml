@@ -1,0 +1,25 @@
+services:
+  app:
+    image: ghcr.io/julianfaalk/kibildergenerator:latest
+    container_name: kibildergenerator.de
+    restart: unless-stopped
+    network_mode: "host"
+    env_file:
+      - .env.local
+    environment:
+      # Connect to MongoDB on localhost (accessible via host network)
+      MONGO_URI: mongodb://root:${MONGO_ROOT_PASSWORD:-change_me_root}@localhost:27017/admin
+      MONGO_DB: ${MONGO_DB:-kibildergenerator}
+      PORT: 8080
+      NODE_ENV: production
+    volumes:
+      - app_storage:/app/storage
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:8080/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})\""]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  app_storage:
+    driver: local
