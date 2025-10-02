@@ -1,13 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       {/* Top badges bar */}
-      <div className="border-b bg-gray-50/90">
+      <div className={`border-b bg-gray-50/90 transition-all duration-300 ${isScrolled ? "max-h-0 overflow-hidden opacity-0" : "max-h-20 opacity-100"}`}>
         <div className="container mx-auto px-4 sm:px-8 py-2.5">
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:justify-between">
             <div className="flex items-center gap-2">
